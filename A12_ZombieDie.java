@@ -1,0 +1,60 @@
+public class A12_ZombieDie
+{
+    public static final int NOT_ROLLED = 0;
+    public static final int RUNNER = 1;
+    public static final int BRAIN = 2;
+    public static final int SHOT = 3;
+    public static final int RED = 1;
+    public static final int GREEN = 2;
+    public static final int YELLOW = 3;
+
+    private int dieColor;
+    private int value;
+
+    public A12_ZombieDie(int dieColor)
+    {
+        this.dieColor = dieColor;
+        value = NOT_ROLLED;
+    }
+
+    public int getValue()
+    {
+        return value;
+    }
+    public int getDieColor()
+    {
+        return dieColor;
+    }
+    public void setDieColor(int dieColor)
+    {
+        this.dieColor = dieColor;
+    }
+    public void setValue(int value)
+    {
+        this.value = value;
+    }
+    public String toString()
+    {
+        String color = "";
+        if (dieColor == RED)
+            color = "Red";
+        else if (dieColor == YELLOW)
+            color = "Yellow";
+        else if (dieColor == GREEN)
+            color = "Green";
+
+        if (value == RUNNER)
+            color += "-Runner";
+        if (value == SHOT)
+            color += "-Shot";
+        if (value == BRAIN)
+            color += "-Brain";
+
+        return color;
+    }
+    public void roll()
+    {
+        value = NOT_ROLLED;
+    }
+
+}
